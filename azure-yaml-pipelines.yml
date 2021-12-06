@@ -11,13 +11,21 @@ parameters:
   values:
   - Lakshhna
   - Ryan
-  - macOS-latest
 
 trigger:
 - main
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+stages:
+- stage: Dev
+  jobs:
+    -job:
+      - script: echo Dev! ${{ parameters.Env }}
+        displayName: 'Run a one-line script'
+- stage: QA
+  jobs:
+    -job:
+      - script: echo QA! ${{ parameters.Env }}
+        displayName: 'Run a one-line script'
+
