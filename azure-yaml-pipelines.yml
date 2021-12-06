@@ -3,10 +3,6 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-variables:
-  var1: value1
-  var2: ${{ parameters.Env }}
-
 parameters:
 - name: Env
   displayName: Pool Image
@@ -16,8 +12,12 @@ parameters:
   - Lakshhna
   - Ryan
 
+variables:
+- name : envName
+  value : ${{ parameters.Env }}
+
 trigger:
-- main
+- none
 pool:
   vmImage: ubuntu-latest
 
@@ -27,7 +27,7 @@ stages:
   jobs:
   - job:
     steps:
-    - script: echo Dev! ${{ parameters.Env }} $(var1) $(var2)
+    - script: echo Dev New! $(envName)
       displayName: 'Run a one-line script'
 
 - stage: QA
@@ -35,5 +35,5 @@ stages:
   jobs:
   - job:
     steps:
-    - script: echo QA! ${{ parameters.Env }}
+    - script: echo QA New! $(envName)
       displayName: 'Run a one-line script'
