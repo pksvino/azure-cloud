@@ -21,12 +21,7 @@ stages:
 - stage: Dev
   displayName: Dev
   jobs:
-  -job:
+  - job:
+    steps:
     - script: echo Dev! ${{ parameters.Env }}
       displayName: 'Run a one-line script'
-- stage: QA
-  jobs:
-  - job:
-    - script: echo QA! ${{ parameters.Env }}
-      displayName: 'Run a one-line script'
-
