@@ -3,6 +3,10 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+variables:
+  var1: value1
+  var2: ${{ parameters.Env }}
+
 parameters:
 - name: Env
   displayName: Pool Image
@@ -11,9 +15,6 @@ parameters:
   values:
   - Lakshhna
   - Ryan
-variables:
-  var1: value1
-  var2: ${{ parameters.Env }}
 
 trigger:
 - main
