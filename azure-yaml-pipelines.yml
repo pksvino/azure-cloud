@@ -11,6 +11,9 @@ parameters:
   values:
   - Lakshhna
   - Ryan
+variables:
+  var1: value1
+  var2: ${{ parameters.Env }}
 
 trigger:
 - main
@@ -23,7 +26,7 @@ stages:
   jobs:
   - job:
     steps:
-    - script: echo Dev! ${{ parameters.Env }}
+    - script: echo Dev! ${{ parameters.Env }} $(var1) $(var12)
       displayName: 'Run a one-line script'
 
 - stage: QA
