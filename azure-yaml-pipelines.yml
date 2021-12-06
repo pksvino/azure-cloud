@@ -7,7 +7,7 @@ parameters:
 - name: Env
   displayName: Pool Image
   type: string
-  default: lakshhna
+  default: Lakshhna
   values:
   - Lakshhna
   - Ryan
