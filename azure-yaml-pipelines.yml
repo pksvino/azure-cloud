@@ -19,13 +19,14 @@ pool:
 
 stages:
 - stage: Dev
+  displayName: Dev
   jobs:
-    -job:
-      - script: echo Dev! ${{ parameters.Env }}
-        displayName: 'Run a one-line script'
+  -job:
+    - script: echo Dev! ${{ parameters.Env }}
+      displayName: 'Run a one-line script'
 - stage: QA
   jobs:
-    -job:
-      - script: echo QA! ${{ parameters.Env }}
-        displayName: 'Run a one-line script'
+  - job:
+    - script: echo QA! ${{ parameters.Env }}
+      displayName: 'Run a one-line script'
 
