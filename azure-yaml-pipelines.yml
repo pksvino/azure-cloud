@@ -32,10 +32,9 @@ stages:
 - stage: Dev
   displayName: Dev
   jobs:
-  - job:
-    steps:
-    - script: echo Dev New! Env=$(envName) Name=$(name)
-      displayName: 'Run a one-line script'
+  - template: sample-template.yaml
+    parameters:
+      env : $(envName)
 
 - stage: QA
   displayName: QA
