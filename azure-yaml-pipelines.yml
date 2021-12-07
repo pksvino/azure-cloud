@@ -34,7 +34,7 @@ stages:
   jobs:
   - template: sample-template.yaml
     parameters:
-      env : $(envName)
+      env : ${{variables.envName}}
 
 - stage: QA
   displayName: QA
