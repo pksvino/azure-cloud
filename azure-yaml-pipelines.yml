@@ -4,17 +4,24 @@
 # https://aka.ms/yaml
 
 parameters:
-- name: Env
+- name: Name
   displayName: Pool Image
   type: string
   default: Lakshhna
   values:
   - Lakshhna
   - Ryan
+- name: Env
+  displayName: Pool Image
+  type: string
+  default: Dev
+  values:
+  - Dev
+  - Test
 
-variables:
-- name : envName
-  value : ${{ parameters.Env }}
+variables: 
+  name : ${{ parameters.Name }}
+  envName : ${{ parameters.Env }}
 
 trigger:
 - none
@@ -27,7 +34,7 @@ stages:
   jobs:
   - job:
     steps:
-    - script: echo Dev New! $(envName)
+    - script: echo Dev New! Env=$(envName) Name=$(name) Name=${{name}} Env=${{envName}}
       displayName: 'Run a one-line script'
 
 - stage: QA
@@ -35,5 +42,5 @@ stages:
   jobs:
   - job:
     steps:
-    - script: echo QA New! $(envName)
+    - script: echo Dev New! Env=$(envName) Name=$(name) Name=${{name}} Env=${{envName}}
       displayName: 'Run a one-line script'
