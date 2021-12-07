@@ -34,7 +34,7 @@ stages:
   jobs:
   - job:
     steps:
-    - script: echo Dev New! Env=$(envName) Name=$(name) Name=${{name}} Env=${{envName}}
+    - script: echo Dev New! Env=$(envName) Name=$(name)
       displayName: 'Run a one-line script'
 
 - stage: QA
@@ -42,5 +42,5 @@ stages:
   jobs:
   - job:
     steps:
-    - script: echo Dev New! Env=$(envName) Name=$(name) Name=${{name}} Env=${{envName}}
+    - script: echo Dev New! Env=$(envName) Name=$(name)
       displayName: 'Run a one-line script'
