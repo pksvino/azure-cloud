@@ -20,8 +20,8 @@ parameters:
   - Test
 
 variables: 
-  name : ${{ parameters.Name }}
-  envName : ${{ parameters.Env }}
+  name : vinoth ${{ parameters.Name }}
+  envName : My Env ${{ parameters.Env }}
 
 trigger:
 - none
